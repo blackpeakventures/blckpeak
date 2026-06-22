@@ -16,9 +16,10 @@ html,body{height:100%;background:#000;color:#fff;font-family:'Inter',sans-serif;
 #page{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:3rem 2rem;opacity:0;}
 
 /* Brand Typography Header */
-.logo-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:2rem;text-align:center;}
-.logo-text-top{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:2.8rem;letter-spacing:0.3em;text-transform:uppercase;line-height:1.1;color:#fff;}
-.logo-text-sub{font-size:0.65rem;letter-spacing:0.55em;text-transform:uppercase;opacity:0.4;margin-top:0.4rem;padding-left:0.55em;}
+.logo-wrap{display:flex;justify-content:center;align-items:center;width:100%;
+margin-bottom:1rem;}
+
+.main-logo{width:min(90vw,700px);height:auto;display:block;filter:brightness(0) invert(1);}
 
 .divider{width:100%;max-width:400px;height:0.5px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);margin:0 auto 2rem;position:relative;overflow:visible;}
 .divider-pulse{position:absolute;top:-1px;left:-100%;width:60px;height:3px;background:linear-gradient(90deg,transparent,#fff,transparent);animation:scan 4s ease-in-out infinite;filter:blur(1px);}
@@ -70,8 +71,6 @@ html,body{height:100%;background:#000;color:#fff;font-family:'Inter',sans-serif;
 </style>
 </head>
 <body>
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
 <div id="noise"></div>
 <div id="scanlines"></div>
 <canvas id="canvas"></canvas>
@@ -82,9 +81,8 @@ html,body{height:100%;background:#000;color:#fff;font-family:'Inter',sans-serif;
 
 <div id="page">
   <div class="logo-wrap reveal">
-    <div class="logo-text-top">Black Peak</div>
-    <div class="logo-text-sub">Ventures</div>
-  </div>
+  <img src="./logo.png" alt="Black Peak Ventures" class="main-logo">
+</div>
 
   <div class="divider reveal">
     <div class="divider-pulse"></div>
