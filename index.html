@@ -21,25 +21,29 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.25rem;
+      /* Fluid padding */
+      padding: clamp(1.5rem, 4vh, 3rem) clamp(1rem, 3vw, 2rem);
       overflow: hidden;
     }
 
     .logo {
-      width: 220px;
-      max-width: 55vw;
+      /* Fluid sizing: min 180px, naturally 22vw, max 280px */
+      width: clamp(180px, 22vw, 280px);
       max-height: 20vh;
       object-fit: contain;
-      margin-bottom: 2.5rem;
+      /* Fluid margin */
+      margin-bottom: clamp(1.5rem, 5vh, 3rem);
       animation: revealDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     .links {
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      /* Fluid gap */
+      gap: clamp(0.6rem, 1.5vh, 1rem);
       width: 100%;
-      max-width: 380px;
+      /* Fluid max-width */
+      max-width: clamp(300px, 35vw, 450px);
       animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
     }
 
@@ -47,12 +51,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 1.4rem;
+      /* Fluid padding and font size */
+      padding: clamp(0.8rem, 2vh, 1.1rem) clamp(1.2rem, 3vw, 1.8rem);
+      font-size: clamp(0.85rem, 1.2vw, 1.05rem);
       border: 1px solid #ffffff;
       border-radius: 6px;
       text-decoration: none;
       color: #ffffff;
-      font-size: 0.9rem;
       font-weight: 500;
       letter-spacing: 0.02em;
       background: transparent;
@@ -68,6 +73,9 @@
     }
     
     .link-btn svg { 
+      /* Fluid icon size inside button */
+      width: clamp(10px, 1.2vw, 14px);
+      height: clamp(10px, 1.2vw, 14px);
       opacity: 0.8; 
       flex-shrink: 0; 
       transition: transform 0.3s ease;
@@ -80,23 +88,26 @@
 
     .divider {
       width: 100%;
-      max-width: 380px;
+      max-width: clamp(300px, 35vw, 450px);
       height: 1px;
       background: #ffffff;
       opacity: 0.2;
-      margin: 1.5rem 0;
+      /* Fluid margin */
+      margin: clamp(1.2rem, 3vh, 2rem) 0;
       animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
     }
 
     .socials {
       display: flex;
-      gap: 1.25rem;
+      /* Fluid gap */
+      gap: clamp(1rem, 2vw, 1.5rem);
       animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
     }
 
     .social-btn {
-      width: 46px;
-      height: 46px;
+      /* Fluid dimensions for social circles */
+      width: clamp(40px, 5vw, 54px);
+      height: clamp(40px, 5vw, 54px);
       border: 1px solid #ffffff;
       border-radius: 50%;
       display: flex;
@@ -113,8 +124,9 @@
     }
     
     .social-btn svg { 
-      width: 18px; 
-      height: 18px; 
+      /* Fluid social icon size */
+      width: clamp(16px, 2vw, 22px);
+      height: clamp(16px, 2vw, 22px);
       fill: #ffffff; 
       transition: fill 0.3s ease;
     }
@@ -124,24 +136,14 @@
     }
 
     footer {
-      margin-top: 2rem;
-      font-size: 0.65rem;
+      /* Fluid margin and font size */
+      margin-top: clamp(1.5rem, 4vh, 2.5rem);
+      font-size: clamp(0.6rem, 0.8vw, 0.75rem);
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #ffffff;
       opacity: 0.4;
       animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
-    }
-
-    /* Shrink on short screens */
-    @media (max-height: 600px) {
-      .logo { max-height: 14vh; margin-bottom: 1.25rem; }
-      .link-btn { padding: 0.7rem 1.2rem; font-size: 0.85rem; }
-      .links { gap: 0.6rem; }
-      .divider { margin: 1rem 0; }
-      .social-btn { width: 38px; height: 38px; }
-      .social-btn svg { width: 14px; height: 14px; }
-      footer { margin-top: 1rem; }
     }
 
     /* Modern Animations */
@@ -167,13 +169,13 @@
   <div class="links">
     <a href="https://patchedsacks.myshopify.com" target="_blank" rel="noopener" class="link-btn">
       PatchedSacks — Shop
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <svg viewBox="0 0 12 12" fill="none">
         <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
     <a href="https://ventraldigital.pages.dev" target="_blank" rel="noopener" class="link-btn">
       Ventral Digital — Studio
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <svg viewBox="0 0 12 12" fill="none">
         <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
